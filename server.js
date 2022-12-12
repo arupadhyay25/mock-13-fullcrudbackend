@@ -1,9 +1,10 @@
 let express = require("express");
 const { connection } = require("./config/db");
-const { authenticate } = require("./middleware/authentication.middleware");
-const auth = require("./Routes/login.routes");
-const notes = require("./Routes/notes.route");
+
 let cors = require("cors");
+const todo = require("./Routes/todo.route");
+const auth = require("./Routes/login.routes");
+const { authenticate } = require("./middleware/authentication.middleware");
 
 let app = express();
 
@@ -13,10 +14,9 @@ app.use(
     origin: "*",
   })
 );
-
 app.use("/", auth);
 app.use(authenticate)
-app.use("/notes", notes);
+app.use("/todos", todo);
 
 app.listen(8080, async () => {
   try {
