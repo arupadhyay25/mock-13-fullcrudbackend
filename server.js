@@ -18,7 +18,7 @@ app.use("/", auth);
 // app.use(authenticate)
 app.use("/notes", notes);
 
-app.listen(7575, async () => {
+app.listen(8080, async () => {
   try {
     await connection;
     console.log("Connected to DB");
