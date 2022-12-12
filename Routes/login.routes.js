@@ -21,7 +21,7 @@ auth.post("/login", async (req, res) => {
     let user = await UserModel.find({ email, password });
     if (user.length == 1) {
       let token = jwt.sign({ userID: user[0]._id }, "shhhhh");
-      res.send({ msg: "Signin succesfully", token: token });
+      res.send({ msg: "Signin succesfully", token: token, Userdata: data });
     } else if (user.length == 0) {
       res.send("User Doesn't Exist ,Please Signup  !!!");
     }
