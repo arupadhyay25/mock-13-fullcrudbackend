@@ -15,7 +15,7 @@ app.use(
 );
 
 app.use("/", auth);
-// app.use(authenticate)
+app.use(authenticate)
 app.use("/notes", notes);
 
 app.listen(8080, async () => {
