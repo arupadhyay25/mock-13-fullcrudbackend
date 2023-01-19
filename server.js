@@ -2,7 +2,7 @@ let express = require("express");
 const { connection } = require("./config/db");
 
 let cors = require("cors");
-const todo = require("./Routes/todo.route");
+const bug = require("./Routes/bug.route");
 const auth = require("./Routes/login.routes");
 const { authenticate } = require("./middleware/authentication.middleware");
 
@@ -16,7 +16,7 @@ app.use(
 );
 app.use("/", auth);
 app.use(authenticate)
-app.use("/todos", todo);
+app.use("/bugs", bug);
 
 app.listen(8080, async () => {
   try {
