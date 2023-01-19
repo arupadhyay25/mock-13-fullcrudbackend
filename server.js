@@ -15,7 +15,7 @@ app.use(
   })
 );
 app.use("/", auth);
-app.use(authenticate)
+// app.use(authenticate)
 app.use("/bugs", bug);
 
 app.listen(8080, async () => {
