@@ -15,7 +15,7 @@ bug.get("/", async (req, res) => {
 });
 
 bug.post("/create", async (req, res) => {
-  let payload = req.body;yy
+  let payload = req.body;
   let new_todo = new BugModel(payload);
   await new_todo.save();
   res.send("Posted Succesfully !!");

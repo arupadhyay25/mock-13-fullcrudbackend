@@ -4,7 +4,6 @@ const { connection } = require("./config/db");
 let cors = require("cors");
 const bug = require("./Routes/bug.route");
 const auth = require("./Routes/login.routes");
-const { authenticate } = require("./middleware/authentication.middleware");
 
 let app = express();
 
@@ -15,7 +14,6 @@ app.use(
   })
 );
 app.use("/", auth);
-// app.use(authenticate)
 app.use("/bugs", bug);
 
 app.listen(8080, async () => {
